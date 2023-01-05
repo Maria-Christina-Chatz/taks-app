@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './styles.css'
 import { Todo } from '../model';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import { MdDone } from 'react-icons/md';
@@ -48,6 +47,15 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
             // ref={provided.innerRef}
             onSubmit = {
                 (e) => handleEdit(e, todo.id)}>
+                    <span 
+                        className="icon" 
+                        onClick = { () => 
+                            {  
+                                handleDone(todo.id)
+                            }
+                        }>
+                        <MdDone />
+                    </span>
                 {
                     edit ? (
                         <input 
@@ -71,7 +79,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
                     ) 
                 }
            
-            <div>
+            <div className='icon-container'>
                 <span 
                     className="icon" 
                     onClick = { () => 
@@ -87,22 +95,13 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
                     <AiFillEdit />
                 </span>
                 <span 
-                    className="icon" 
+                    className="icon delete-action" 
                     onClick = { () => 
                         { 
                             handleDelete(todo.id)
                         }
                     }>                    
                     <AiFillDelete />
-                </span>
-                <span 
-                    className="icon" 
-                    onClick = { () => 
-                        {  
-                            handleDone(todo.id)
-                        }
-                    }>
-                    <MdDone />
                 </span>
             </div>
         </form>

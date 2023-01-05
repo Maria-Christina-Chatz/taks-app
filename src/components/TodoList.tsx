@@ -1,5 +1,4 @@
 import React from "react";
-import './styles.css'
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
 
@@ -13,7 +12,7 @@ const TodoList = ({ todos, setTodos } : Props) => {
         <div className="todos">
         {
             todos.map(( todo ) => (
-                
+
               <SingleTodo 
                     todo={todo} 
                     key={todo.id}

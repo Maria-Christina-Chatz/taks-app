@@ -1,5 +1,4 @@
 import React, {useRef} from 'react';
-import './styles.css';
 
 interface Props{
     todo: string;
@@ -24,7 +23,7 @@ const InputField = ({ todo, setTodo, handleAdd }: Props) => {
             <input 
                 ref = { inputRef }
                 type = "input" 
-                placeholder = "Enter a Task" 
+                placeholder = "What needs to be done?" 
                 className = "input__box"
                 value = { todo }
                 onChange = { 
@@ -35,7 +34,7 @@ const InputField = ({ todo, setTodo, handleAdd }: Props) => {
                 className = "input__submit" 
                 type = "submit"
             >
-                Go
+                Enter
             </button>
         </form>
     )
